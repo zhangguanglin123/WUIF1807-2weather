@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>天气</title>
+	<link rel="stylesheet" href="index.css">
+	<meta name="viewport" content="width=device-width">
+	<script src="rem.js"></script>
+	<script src="jquery3.2.1.min.js"></script>
+</head>
+<body>
+	<header class="hide">
+		<div class="city"></div>
+		<div class="kongqi">
+			<div class="kongqi_box">
+				<div class="kongqi_boxt">空气</div>
+				<div class="kongqi_boxb">轻度污染</div>
+			</div>
+		</div>
+		<div class="zhuangkuang">
+			<div class="tem">
+				<span>10°</span>
+			</div>
+			<div class="tianqi">晴</div>
+			<div class="shidu">
+				<div class="shidu_left">湿度</div>
+				<div class="shidu_right">57%</div>
+			</div>
+		</div>
+		<h2>你若安好,便是晴天～</h2>
+	</header>
+
+	<!-- 头部 结束 -->
+	<!-- 中间 开始 -->
+	<section class="main hide">
+		<div class="mainbox">
+			<div class="mainboxleft">
+				<div class="mainboxleft_top">
+					<div class="mainboxleft_topl">今天</div>
+					<div class="mainboxleft_topr">
+						<span>17</span>
+						<span>/</span>
+						<span>3°</span>
+					</div>
+				</div>
+				<div class="mainboxleft_bottom">
+					<div class="mainboxleft_bottoml">晴转多云</div>
+					<div class="mainboxleft_bottomr"></div>
+				</div>
+			</div>
+			<div class="mainboxright">
+				<div class="mainboxright_top">
+					<div class="mainboxright_topl">明天</div>
+					<div class="mainboxright_topr">
+						<span id="tomorrow_high_temperature">17</span>
+						<span>/</span>
+						<span id="tomorrow_low_temperature">5°</span>
+					</div>
+				</div>
+				<div class="mainboxright_bottom">
+					<div class="mainboxright_bottoml">多云</div>
+					<div class="mainboxright_bottomr"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 中间 结束 -->
+	<!-- 未来24小时天气情况 开始 -->
+	<section class="future24 hide">
+		<div class="hours">
+			<ul class="timelist">
+				<!-- <li>
+					<span class="list_top">08:00</span>
+					<span class="list_middle"></span>
+					<span class="list_bottom">10°</span>
+				</li> -->
+			</ul>
+		</div>
+	</section>
+	<!-- 未来24小时天气情况 结束 -->
+	<!-- 近期天气 开始 -->
+	<section class="recent hide">
+		<div class="warp1">
+			<div class="con"> 
+				<div class="con_day">昨天</div>
+				<div class="con_date">
+					<span id="con_date_left">03</span>
+					<span>/</span>
+					<span id="con_date_right">21</span>
+				</div>
+				<div class="weaH">
+					<span class="weaH_text">多云</span>
+					<span class="weaH_pic">
+						<span class="weaH_pic1"></span>
+					</span>
+				</div>
+				<div class="zhexian">
+				<div class="high_temperature_text">最高温</div>
+					<div class="high_temperature">12°</div>
+				</div>
+				<span class="wealow_pic">
+						<span class="wealow_pic1"></span>
+				</span>
+				<div class="wealow_text">阴</div>
+				<div class="direction">南风</div>
+				<div class="Grade">3级</div>
+			</div>
+		</div>
+	</section>
+	<!-- 近期天气 结束 -->
+	<!-- 推荐 开始 -->
+	<ul class="recommend hide">
+		<li>
+		    <a href="" class="xianhao"></a>
+		    <div class="text">
+		    	<span class="text_t">3和8</span>
+		    	<span class="text_b">尾号限行</span>
+		    </div>
+		</li>
+		<li>
+			<a href="" class="chuanyi"></a>
+			<div class="text">
+		    	<span class="text_t">较冷</span>
+		    	<span class="text_b">穿衣</span>
+		    </div>
+		</li>
+		<li>
+		    <a href="" class="yusan"></a>
+		    <div class="text">
+		    	<span class="text_t">不带伞</span>
+		    	<span class="text_b">雨伞</span>
+		    </div>
+		</li>
+		<li>
+		    <a href="" class="ganmao"></a>
+		    <div class="text">
+		    	<span class="text_t">较易发</span>
+		    	<span class="text_b">感冒</span>
+		    </div>
+		</li>
+		<li>
+		    <a href="" class="xiche"></a>
+		    <div class="text">
+		    	<span class="text_t">较适宜</span>
+		    	<span class="text_b">洗车</span>
+		    </div>
+		</li>
+		<li>
+		    <a href="" class="yundong"></a>
+		    <div class="text">
+		    	<span class="text_t">适宜</span>
+		    	<span class="text_b">运动</span>
+		    </div>
+		</li>
+		<li>
+		    <a href="" class="fangshai"></a>
+		    <div class="text">
+		    	<span class="text_t">较弱</span>
+		    	<span class="text_b">防晒</span>
+		    </div>
+		</li>
+		<li>
+		    <a href="" class="diaoyu"></a>
+		    <div class="text">
+		    	<span class="text_t">适宜</span>
+		    	<span class="text_b">钓鱼</span>
+		    </div>
+		</li>
+	</ul>
+	<!-- 推荐 结束 -->
+	<!-- 运动和防晒指数 开始	 -->
+	<div class="ydandfs hide">
+		<a class="ydandfs_box"></a>
+		<a class="ydandfs_box"></a>
+	</div>
+	<!-- 运动和防晒指数 结束	 -->
+	<footer class="hide">
+		<div class="footertop">
+		    <a href="">数据来源于中国天气网</a>
+			<a href="">反馈</a>
+			<span>|</span>
+			<a href="">举报中心</a>
+		</div>
+		<div class="footerbot">Copyright © 1998 - 2018 Tencent. All Rights Reserved</div>
+	</footer>
+	<!-- 城市 开始 -->
+	<div class="Location">
+		<!-- 定位 开始 -->
+		<div class="search">
+			<div class="searchbox">
+				<div class="iconbox">
+					<div class="icon"></div>
+				</div>
+				<input type="text" placeholder="搜索地点/景色">
+				<div class="searchbox_right">取消</div>
+			</div>
+		</div>
+		<!-- 定位 开始 -->
+		<!-- 热门城市 开始 -->
+		<div class="hotcity">
+			<div class="hotcity_text">热门城市</div>
+			<ul class="hotcity_list">
+				<li>北京</li>
+				<li>上海</li>
+				<li>广州</li>
+				<li>深圳</li>
+				<li>郑州</li>
+				<li>西安</li>
+				<li>南京</li>
+				<li>杭州</li>
+				<li>武汉</li>
+				<li>成都</li>
+				<li>沈阳</li>
+				<li>天津</li> 
+			</ul>
+		</div>
+		<!-- 热门城市 结束 -->
+		<div class="hotscenic ">
+			<!-- <div class="hotscenic_text">热门景区</div>
+			<ul class="hotscenic1">
+				<li>故宫</li>
+				<li>颐和园</li>
+				<li>九寨沟</li>
+				<li>凤凰古城</li>
+				<li>秦始皇陵</li>
+				<li>龙门石窟</li>
+				<li>武陵源</li>
+				<li>华山</li>
+				<li>黄山</li>
+			</ul> -->
+		</div>
+	</div>
+	<!-- 城市 结束 -->
+</body>
+</html>
+<script src="index.js"></script>
+
+
+
+
+
+
